@@ -174,4 +174,5 @@ cython_debug/
 .pypirc
 
 # PyPI build artifacts
-generated-images
+*.eps
+saved
