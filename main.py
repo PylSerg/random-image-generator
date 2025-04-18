@@ -35,7 +35,7 @@ for i in range(image_height):
         
         count += 1
         
-        print(f"\rGenerating image... {round(count * 100 / (image_width * image_height), 2)}%", end="")
+        print(f"\rGenerating image... {round(count * 100 / (image_width * image_height), 2)}%   ", end="")
         
     goto(X, Y - (i + 1))
 
@@ -53,8 +53,5 @@ if save_image == "y":
     print(f"\nImage saved successfully!\n")
 elif save_image == "n":
     print("\nImage not saved.\n")
-    exit()
 else:
     print("\nInvalid input. Image not saved.\n")
-
-done()        
