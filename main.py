@@ -1,5 +1,9 @@
 from turtle import *
 from random import randint
+from PIL import Image
+from datetime import datetime
+
+print("\nWelcome to the Random Image Generator!\n\n")
 
 image_width = int(input("Width: "))
 image_height = int(input("Height: "))
@@ -9,6 +13,8 @@ Y = image_height / 2
 
 count = 0
 
+setup(width=image_width, height=image_height)
+title("Random Image Generator")  
 hideturtle()
 tracer(0, 0)
 up()
@@ -33,4 +39,10 @@ for i in range(image_height):
     goto(X, Y - (i + 1))
 
 print("\n\nImage generation complete!")
+
+# Export the image to .png format
+getscreen().getcanvas().postscript(file="generated-images/eps/image.eps")
+img = Image.open("generated-images/eps/image.eps")
+img.save(f"generated-images/png/RIG-{datetime.now().strftime("%Y-%m-%d-%H-%M-%S")}.png", "png")
+
 done()        
